@@ -33,16 +33,19 @@ wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/wp1
 wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/wp2
 cd ~
 
+sudo gpasswd -a ubuntu docker
+
+docker-compose -f mysql/docker-compose.yml up -d
+
+docker-compose -f wordpressOld/docker-compose.yml up -d
+
+sudo rm /etc/nginx/sites-enabled/*
+sudo cp nginx/wp1 /etc/nginx/sites-enabled/
+sudo service nginx reload
 
 
-# # git clone <mysql>
-# docker-compose -f mysql/docker-compose.yml up -d
+echo "WOW, create a account"
 
-# # git clone <wordpress1>
-# docker-compose -f wordpress1/docker-compose.yml up -d
+SITENAME=`curl ifconfig.co`
 
-# # git clone <nginx>
-# rm /etc/nginx/sites-enabled/*
-# cp nginx/wp1 /etc/nginx/sites-enabled/
-# service nginx reload
-
+wp_install_result=$(php -r 'define("WP_SITEURL", "http://'$SITENAME'");define("WP_INSTALLING", true);require_once("./wp-load.php");require_once("wp-admin/includes/upgrade.php");$response=wp_install("Hi Eva, I am Frank, To do this is very hard...OMG", admin, "OMG@qq.com", false, null, "ABC");echo $response;')
