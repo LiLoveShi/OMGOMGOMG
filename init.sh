@@ -3,7 +3,7 @@ echo "update apt"
 apt update >/dev/null 2>&1
 
 echo "install nginx curl mysql-client"
-apt install -y nginx curl mysql-client >/dev/null 2>&1
+apt install -y nginx curl mysql-client >/dev/null 2>&1士大夫噶是否s
 service nginx start
 
 echo "install docker"
