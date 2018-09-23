@@ -1,13 +1,13 @@
 #!/bin/bash
 
 cd ~/
-echo "Starting wordpress2..."
-docker-compose -f wordpress2/docker-compose.yml up -d
+echo "Starting wordpressNew..."
+docker-compose -f wordpressNew/docker-compose.yml up -d
 
-echo "Switch nginx to wordpress2..."
+echo "Switch nginx to wordpressNew..."
 rm /etc/nginx/sites-enabled/*
 cp nginx/wp2 /etc/nginx/sites-enabled/
 service nginx reload
 
-echo "Stopping wordpress1..."
+echo "Stopping wordpressOld..."
 docker-compose -f wordpress1/docker-compose.yml down
