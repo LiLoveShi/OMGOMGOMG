@@ -41,9 +41,9 @@ docker-compose -f mysql/docker-compose.yml up -d
 
 docker-compose -f wordpressOld/docker-compose.yml up -d
 
-sudo rm /etc/nginx/sites-enabled/*
-sudo cp nginx/wp1 /etc/nginx/sites-enabled/
-sudo service nginx reload
+rm /etc/nginx/sites-enabled/*
+cp nginx/wp1 /etc/nginx/sites-enabled/
+service nginx reload
 
 
 # echo "WOW, create a account"
