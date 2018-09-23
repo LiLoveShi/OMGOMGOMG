@@ -34,6 +34,8 @@ wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/wp2
 cd ~
 
 sudo gpasswd -a ubuntu docker
+sudo su
+su ubuntu
 
 docker-compose -f mysql/docker-compose.yml up -d
 
