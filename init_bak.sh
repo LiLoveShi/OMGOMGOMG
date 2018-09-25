@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ~/
-# wget <backup_db.sh> -O /usr/local/backup_db.sh
+wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/backup_db.sh
 if [ "$(crontab -l | grep 'no crontab' | wc -l)" -gt 0 ];then
     echo "0 * * * * /bin/bash /usr/local/backup_db.sh &" > mycron
     crontab mycron
