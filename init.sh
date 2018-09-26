@@ -2,12 +2,12 @@
 echo "update apt"
 apt update >/dev/null 2>&1
 
-echo "install crontab"
-apt-get install cron
-
 echo "install nginx curl mysql-client"
 apt install -y nginx curl mysql-client >/dev/null 2>&1
 service nginx start
+
+echo "install crontab"
+apt-get install cron
 
 echo "install docker"
 
@@ -52,7 +52,6 @@ wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/switch_wpOld.s
 
 echo "download files required in assignment two"
 wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/init_bak.sh
-wget https://raw.githubusercontent.com/LiLoveShi/OMGOMGOMG/master/backup_db.sh
 
 # echo "WOW, create a account"
 
