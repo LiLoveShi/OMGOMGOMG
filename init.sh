@@ -44,8 +44,8 @@ echo "mysql"
 docker-compose -f wordpressOld/docker-compose.yml up -d
 echo "wordpress"
 rm /etc/nginx/sites-enabled/*
-# cp nginx/wp1 /etc/nginx/sites-enabled/
-cp nginx/wp /etc/nginx/sites-enabled/
+cp nginx/wp1 /etc/nginx/sites-enabled/
+# cp nginx/wp /etc/nginx/sites-enabled/
 service nginx reload
 
 echo "download the switch file"
